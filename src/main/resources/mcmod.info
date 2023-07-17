@@ -1,9 +1,9 @@
 [
   {
-    "modid": "sellstick-counter",
-    "name": "SellStick Counter",
-    "description": "A mod that counts all SellStick uses in a container.",
-    "version": "${version}",
+    "modid": "multi-drop",
+    "name": "MultiDrop",
+    "description": "Get out of my chests",
+    "version": "0.1",
     "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",

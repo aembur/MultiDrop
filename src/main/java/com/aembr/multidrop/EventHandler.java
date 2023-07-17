@@ -1,4 +1,4 @@
-package com.aembr.sellstickcounter;
+package com.aembr.multidrop;
 
 
 import net.minecraft.client.Minecraft;
@@ -26,23 +26,23 @@ public class EventHandler {
     public void keyboardEvent(GuiScreenEvent.KeyboardInputEvent.Post event) {
         GuiScreen screen = event.getGui();
         if (isValidGui(screen)) {
-            if (!(Keyboard.getEventKey() == SellstickCounter.countKey || Keyboard.getEventKey() == SellstickCounter.countRunningTotalKey)) {
+            if (!(Keyboard.getEventKey() == MultiDrop.countKey || Keyboard.getEventKey() == MultiDrop.countRunningTotalKey)) {
                 return;
             }
 
             int uses;
             GuiContainer c = (GuiContainer) screen;
 
-            if (Keyboard.getEventKey() == SellstickCounter.countKey && Keyboard.getEventKeyState()) {
+            if (Keyboard.getEventKey() == MultiDrop.countKey && Keyboard.getEventKeyState()) {
                 uses = doCount(c);
-                SellstickCounter.runningTotal = 0;
+                MultiDrop.runningTotal = 0;
                 Minecraft.getMinecraft().player.sendMessage(new TextComponentString(String.format("%s uses", uses)));
             }
 
-            else if (Keyboard.getEventKey() == SellstickCounter.countRunningTotalKey && Keyboard.getEventKeyState()) {
+            else if (Keyboard.getEventKey() == MultiDrop.countRunningTotalKey && Keyboard.getEventKeyState()) {
                 uses = doCount(c);
-                SellstickCounter.runningTotal += uses;
-                Minecraft.getMinecraft().player.sendMessage(new TextComponentString(String.format("%s uses (+%s)", SellstickCounter.runningTotal, uses)));
+                MultiDrop.runningTotal += uses;
+                Minecraft.getMinecraft().player.sendMessage(new TextComponentString(String.format("%s uses (+%s)", MultiDrop.runningTotal, uses)));
             }
         }
     }
@@ -63,7 +63,7 @@ public class EventHandler {
                 NBTTagList lore = itemStack.getTagCompound().getCompoundTag("display").getTagList("Lore", 8);
                 for (int j = 0; j < lore.tagCount(); j++) {
                     String line = lore.getStringTagAt(j);
-                    Matcher matcher = SellstickCounter.searchPattern.matcher(line);
+                    Matcher matcher = MultiDrop.searchPattern.matcher(line);
                     if (matcher.matches()) {
                         uses += Integer.parseInt(matcher.group(1));
                     }
