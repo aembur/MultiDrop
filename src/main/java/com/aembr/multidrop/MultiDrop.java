@@ -72,7 +72,7 @@ public class MultiDrop {
                         Minecraft.getMinecraft().playerController.windowClick(
                                 container.windowId,
                                 slot.slotNumber,
-                                0,
+                                1,
                                 ClickType.THROW,
                                 Minecraft.getMinecraft().player);
                     }
