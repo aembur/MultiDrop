@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 
 @Mod(modid = MultiDrop.MOD_ID, name = MultiDrop.MOD_NAME, version = MultiDrop.VERSION)
 public class MultiDrop {
-    public static final String MOD_ID = "multi-drop";
+    public static final String MOD_ID = "multidrop";
     public static final String MOD_NAME = "MultiDrop";
-    public static final String VERSION = "1.12.2-0.2.0";
+    public static final String VERSION = "1.12.2-0.1";
 
     public static int countKey = Keyboard.KEY_C;
     public static int countRunningTotalKey = Keyboard.KEY_V;

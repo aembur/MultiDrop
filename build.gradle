@@ -7,7 +7,7 @@ group = 'com.aembr'
 version = '1.12.2-0.1'
 
 java {
-    archivesBaseName = 'multi-drop'
+    archivesBaseName = 'multidrop'
     toolchain.languageVersion = JavaLanguageVersion.of(8)
 }
 
