@@ -58,7 +58,7 @@ public class MultiDrop {
         GuiContainer c = (GuiContainer) screen;
         Container container = c.inventorySlots;
 
-        if (Keyboard.getEventKey() == dropKey) {
+        if (Keyboard.getEventKey() == dropKey && Keyboard.getEventKeyState()) {
             for (Slot slot : container.inventorySlots) {
                 ItemStack item = slot.getStack();
                 String registryName = item.getItem().getRegistryName().toString();
